@@ -17,7 +17,7 @@ function App() {
         <Playlist></Playlist>
         <Tracklist></Tracklist>
         <Track></Track>
-        <button type="button">Save To Spotify</button>
+        <Button label='Save To Spotify'></Button>
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
