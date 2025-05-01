@@ -2,6 +2,9 @@ import logo from './logo.svg';
 import './App.css';
 import SearchBar from './SearchBar.js';
 import SearchResults from './SearchResults.js';
+import Playlist from './Playlist.js';
+import Tracklist from './Tracklist.js';
+import Track from './Track.js';
 
 function App() {
   return (
@@ -9,6 +12,11 @@ function App() {
       <header className="App-header">
         <SearchBar></SearchBar>
         <SearchResults></SearchResults>
+        <Playlist></Playlist>
+        <Tracklist></Tracklist>
+        <Track></Track>
+        <button type="button">Save To Spotify</button>
+        <button type="button">Search</button>
         <img src={logo} className="App-logo" alt="logo" />
         <a
           className="App-link"
