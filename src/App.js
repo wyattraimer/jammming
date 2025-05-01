@@ -5,13 +5,14 @@ import SearchResults from './SearchResults/SearchResults.js';
 import Playlist from './Playlist/Playlist.js';
 import Tracklist from './Tracklist/Tracklist.js';
 import Track from './Track/Track.js';
+import Button from './Button/Button.js';
 
 function App() {
   return (
     <div className="App">
       <header className="App-header">
         <SearchBar></SearchBar>
-        <button type="button">Search</button>
+        <Button label="Search"></Button>
         <SearchResults></SearchResults>
         <Playlist></Playlist>
         <Tracklist></Tracklist>
