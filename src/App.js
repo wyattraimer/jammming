@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
-import SearchBar from './SearchBar.js';
-import SearchResults from './SearchResults.js';
-import Playlist from './Playlist.js';
-import Tracklist from './Tracklist.js';
-import Track from './Track.js';
+import SearchBar from './SearchBar/SearchBar.js';
+import SearchResults from './SearchResults/SearchResults.js';
+import Playlist from './Playlist/Playlist.js';
+import Tracklist from './Tracklist/Tracklist.js';
+import Track from './Track/Track.js';
 
 function App() {
   return (
