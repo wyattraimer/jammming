@@ -1,10 +1,10 @@
 import './App.css';
-import SearchBar from './SearchBar/SearchBar.js';
-import SearchResults from './SearchResults/SearchResults.js';
-import Playlist from './Playlist/Playlist.js';
-import Tracklist from './Tracklist/Tracklist.js';
-import Track from './Track/Track.js';
-import Button from './Button/Button.js';
+import SearchBar from '../SearchBar/SearchBar.js';
+import SearchResults from '../SearchResults/SearchResults.js';
+import Playlist from '../Playlist/Playlist.js';
+import Tracklist from '../Tracklist/Tracklist.js';
+import Track from '../Track/Track.js';
+import Button from '../Button/Button.js';
 
 function App() {
   return (
