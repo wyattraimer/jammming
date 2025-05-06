@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 import SearchBar from './SearchBar/SearchBar.js';
 import SearchResults from './SearchResults/SearchResults.js';
@@ -18,15 +17,6 @@ function App() {
         <Tracklist></Tracklist>
         <Track></Track>
         <Button label='Save To Spotify'></Button>
-        <img src={logo} className="App-logo" alt="logo" />
-        <a
-          className="App-link"
-          href="https://org.coloradomesa.edu/~wwraimer/portfolio/"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          My portfolio
-        </a>
       </header>
     </div>
   );
