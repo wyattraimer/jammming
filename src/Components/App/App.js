@@ -10,6 +10,10 @@ function App () {
   const [playlistName, setPlaylistName] = useState('Ex Playlist Name');
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
+  const addTrack = track => {
+    searchResults.find(t => t.id === track.id)
+  }
+
     return (
       <div>
         <h1>
