@@ -11,7 +11,14 @@ function App () {
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
   const addTrack = track => {
-    searchResults.find(t => t.id === track.id)
+    const existingTrack = playlistTracks.find(t => t.id === track.id);
+    const newTrack = playlistTracks.concat(track);
+    // if(existingTrack){
+    //   console.log("This track already exists.");
+    // }else{
+    //   setPlaylistTracks(newTrack);
+    // }
+    existingTrack ? console.log("This track already exists.") : setPlaylistTracks(newTrack);
   }
 
     return (
