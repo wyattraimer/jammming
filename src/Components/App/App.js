@@ -6,6 +6,8 @@ import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 
 function App () {
+  const [searchResults, setSearchResults] = useState([]);
+
     return (
         <div>
         <h1>
@@ -15,7 +17,7 @@ function App () {
           <SearchBar></SearchBar>
           
           <div className={styles["App-playlist"]}>
-            <SearchResults></SearchResults>
+            <SearchResults userSearchResults={searchResults}></SearchResults>
             <Playlist></Playlist>
           </div>
         </div>
