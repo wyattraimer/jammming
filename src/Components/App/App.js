@@ -11,16 +11,15 @@ function App () {
   const [playlistTracks, setPlaylistTracks] = useState([]);
 
     return (
-        <div>
+      <div>
         <h1>
           Ja<span className={styles.highlight}>mmm</span>ing
         </h1>
         <div className={styles.App}>
           <SearchBar></SearchBar>
-          
           <div className={styles["App-playlist"]}>
             <SearchResults userSearchResults={searchResults}></SearchResults>
-            <Playlist></Playlist>
+            <Playlist playlistName={playlistName} playlistTracks={playlistTracks}></Playlist>
           </div>
         </div>
       </div>
