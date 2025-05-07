@@ -8,7 +8,7 @@ function Track (props) {
   }
 
     return (
-      <div className={styless.Track}>
+      <div className={styles.Track}>
         <div className={styles['Track-information']}>
           {/* <h3><!-- track name will go here --></h3> */}
           
