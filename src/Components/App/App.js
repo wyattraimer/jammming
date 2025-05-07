@@ -6,14 +6,9 @@ import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
 
 function App () {
-  const [searchResults, setSearchResults] = useState([
-    {
-      name: "yourmom",
-      album: ".com",
-      artist: "very cool guy",
-      id: 1
-    }
-  ]);
+  const [searchResults, setSearchResults] = useState([]);
+  const [playlistName, setPlaylistName] = useState('Ex Playlist Name');
+  const [playlistTracks, setPlaylistTracks] = useState([]);
 
     return (
         <div>
