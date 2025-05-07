@@ -3,6 +3,7 @@ import styles from './App.module.css';
 
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
+import Playlist from "../Playlist/Playlist";
 
 function App () {
     return (
@@ -15,7 +16,7 @@ function App () {
           
           <div className={styles["App-playlist"]}>
             <SearchResults></SearchResults>
-            {/* <!-- Add a Playlist component --> */}
+            <Playlist></Playlist>
           </div>
         </div>
       </div>
