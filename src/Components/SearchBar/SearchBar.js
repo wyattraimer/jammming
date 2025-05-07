@@ -1,10 +1,9 @@
-import React from 'react'
-import styles from './SearchBar.module.css'
+import React from 'react';
 
 const SearchBar = () => {
   return (
-    <div>
-      <input type='text' placeholder='Type your song here'/>
+    <div className='SearchBar'>
+      <input type='text' placeholder='Enter A Song, Album, or Artist'/>
     </div>
   )
 }
