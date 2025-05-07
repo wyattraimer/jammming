@@ -1,7 +1,12 @@
 import React from "react";
 import styles from './Track.module.css';
 
-function Track () {
+function Track (props) {
+  const renderAction = () => {
+    //refacrored
+    return <button className="Track-action">{props.isRemoval?"-":"+"}</button>
+  }
+
     return (
       <div className={styless.Track}>
         <div className={styles['Track-information']}>
