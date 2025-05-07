@@ -1,9 +1,15 @@
-import React from 'react'
+import React from "react";
 
-const Playlist = () => {
+function Playlist() {
   return (
-    <div>Playlist</div>
-  )
+    <div className="Playlist">
+      <input defaultValue={"New Playlist"} />
+      {/* <!-- Add a TrackList component --> */}
+      <button className="Playlist-save">
+        SAVE TO SPOTIFY
+      </button>
+    </div>
+  );
 }
 
-export default Playlist
+export default Playlist;

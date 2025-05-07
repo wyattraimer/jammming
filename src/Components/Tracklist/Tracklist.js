@@ -1,9 +1,11 @@
-import React from 'react'
+import React from "react";
 
-const Tracklist = () => {
-  return (
-    <div>Tracklist</div>
-  )
+function Tracklist () {
+    return (
+        <div className="TrackList">
+        {/* <!-- You will add a map method that renders a set of Track components  --> */}
+      </div>
+    );
 }
 
-export default Tracklist
+export default Tracklist;

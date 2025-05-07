@@ -1,9 +1,11 @@
 import React from "react";
 
-const SearchResults = () => {
+function SearchResults () {
     return (
-        <div>SearchResults</div>
-    )
+        <div className="SearchResults">
+        {/* <!-- Add a TrackList component --> */}
+      </div>
+        );
 }
 
 export default SearchResults;
