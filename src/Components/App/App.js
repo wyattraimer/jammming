@@ -16,6 +16,11 @@ function App () {
     existingTrack ? console.log("This track already exists.") : setPlaylistTracks(newTrack);
   }
 
+  const removeTrack = track => {
+    const existingTrack = playlistTracks.filter(t => t.id !== track.id);
+    setPlaylistTracks(existingTrack);
+  }
+
     return (
       <div>
         <h1>
@@ -25,7 +30,12 @@ function App () {
           <SearchBar></SearchBar>
           <div className={styles["App-playlist"]}>
             <SearchResults userSearchResults={searchResults} onAdd={addTrack}></SearchResults>
-            <Playlist playlistName={playlistName} playlistTracks={playlistTracks}></Playlist>
+            <Playlist 
+              playlistName={playlistName} 
+              playlistTracks={playlistTracks}
+              onRemove={removeTrack}
+            >
+            </Playlist>
           </div>
         </div>
       </div>
