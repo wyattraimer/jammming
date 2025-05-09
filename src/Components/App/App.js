@@ -29,13 +29,19 @@ function App () {
     const trackURIs = playlistTracks.map(t => t.uri)
   }
 
+  const search = term => {
+    console.log(term);
+  }
+
     return (
       <div>
         <h1>
           Ja<span className={styles.highlight}>mmm</span>ing
         </h1>
         <div className={styles.App}>
-          <SearchBar></SearchBar>
+          <SearchBar
+            onSearch={search}
+          />
           <div className={styles["App-playlist"]}>
             <SearchResults userSearchResults={searchResults} onAdd={addTrack}></SearchResults>
             <Playlist 
