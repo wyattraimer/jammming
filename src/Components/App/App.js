@@ -4,6 +4,7 @@ import styles from './App.module.css';
 import SearchBar from "../SearchBar/SearchBar";
 import SearchResults from "../SearchResults/SearchResults";
 import Playlist from "../Playlist/Playlist";
+import { Spotify } from "../../util/Spotify";
 
 function App () {
   const [searchResults, setSearchResults] = useState([]);
@@ -30,6 +31,8 @@ function App () {
   }
 
   const search = term => {
+    //b/c it's returning a promise
+    Spotify.search(term).then(result => setSearchResults(result));
     console.log(term);
   }
 
