@@ -19,6 +19,10 @@ const Spotify = {
             window.history.pushState("Access token", null, "/");
             return accessToken;
         }
+        //redirects users to login to their Spotify account with our apps info
+        const redirect = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
+        //link in window where we want them to be redirected to
+        window.location = redirect;
     },
 }
 
