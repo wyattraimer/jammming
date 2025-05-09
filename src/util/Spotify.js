@@ -53,7 +53,8 @@ const Spotify = {
         const redirect = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public%20user-read-private%20user-read-email%20user-read-playback-state%20user-library-read%20streaming&redirect_uri=${encodeURIComponent(redirectURI)}`;
         console.log("Redirecting to Spotify Login with URL:", redirect);
         window.location = redirect;
-
+        
+        console.log("Window Location URL:", window.location.href);
     },
     search(term){
         accessToken = Spotify.getAccessToken();
