@@ -50,9 +50,10 @@ const Spotify = {
         }
 
         console.warn("No token found in URL, redirecting to Spotify...");
-        const redirect = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public%20user-read-private%20user-read-email%20user-read-playback-state%20user-library-read&redirect_uri=${redirectURI}`;
-        console.log("Redirect URL:", redirect);
+        const redirect = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public%20user-read-private%20user-read-email%20user-read-playback-state%20user-library-read%20streaming&redirect_uri=${encodeURIComponent(redirectURI)}`;
+        console.log("Redirecting to Spotify Login with URL:", redirect);
         window.location = redirect;
+
     },
     search(term){
         accessToken = Spotify.getAccessToken();
