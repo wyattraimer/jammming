@@ -24,6 +24,24 @@ const Spotify = {
         //link in window where we want them to be redirected to
         window.location = redirect;
     },
+    search(term){
+        accessToken = Spotify.getAccessToken();
+        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+            method: 'GET',
+            headers: {Authorization: `bearer ${accessToken}`},
+        })
+        .then(response => response.json())
+        .then(jsonResponse => {
+            if(!jsonResponse) console.error("Response error.");
+            return jsonResponse.tracks.items.map(t => ({
+                id: t.id,
+                name: t.name,
+                arist: t.artist[0].name,
+                album: t.album.name,
+                uri: t.uri
+            }))
+        })
+    }
 }
 
-export default Spotify
+export { Spotify };
