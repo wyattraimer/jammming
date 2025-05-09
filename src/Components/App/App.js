@@ -21,6 +21,10 @@ function App () {
     setPlaylistTracks(existingTrack);
   }
 
+  const updatePlaylistName = name => {
+    setPlaylistName(name);
+  }
+
     return (
       <div>
         <h1>
