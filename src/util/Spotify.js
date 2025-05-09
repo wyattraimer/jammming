@@ -20,31 +20,17 @@ const Spotify = {
             return accessToken;
         }
         //redirects users to login to their Spotify account with our apps info
-        const redirect = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public&redirect_uri=${redirectURI}`;
+        const redirect = `https://accounts.spotify.com/authorize?client_id=${clientID}&response_type=token&scope=playlist-modify-public%20user-read-private%20user-read-email%20user-read-playback-state%20user-library-read&redirect_uri=${redirectURI}`;
         //link in window where we want them to be redirected to
         window.location = redirect;
     },
     search(term){
         accessToken = Spotify.getAccessToken();
-        // return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
-        //     method: 'GET',
-        //     headers: {Authorization: `bearer ${accessToken}`},
-        // })
         return fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(term)}&type=track`, {
             method: 'GET',
             headers: { Authorization: `Bearer ${accessToken}` },
         })
         .then(response => response.json())
-        // .then(jsonResponse => {
-        //     if(!jsonResponse) console.error("Response error.");
-        //     return jsonResponse.tracks.items.map(t => ({
-        //         id: t.id,
-        //         name: t.name,
-        //         arist: t.artists[0].name,
-        //         album: t.album.name,
-        //         uri: t.uri
-        //     }))
-        // })
         .then(jsonResponse => {
             if (!jsonResponse || !jsonResponse.tracks || !jsonResponse.tracks.items) {
                 console.error("Response error: No tracks found.");
