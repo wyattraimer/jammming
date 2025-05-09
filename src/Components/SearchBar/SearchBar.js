@@ -18,7 +18,8 @@ function SearchBar (props) {
           placeholder="Enter A Song, Album, or Artist"
           onChange={handleTermChange}
         />
-        <button className={styles.SearchButton} onClick={passTerm}>
+        {/* <button className={styles.SearchButton} onClick={passTerm}> */}
+        <button className={styles.SearchButton} onClick={() => passTerm(term)}>
           SEARCH
         </button>
       </div>

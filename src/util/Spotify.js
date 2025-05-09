@@ -26,21 +26,40 @@ const Spotify = {
     },
     search(term){
         accessToken = Spotify.getAccessToken();
-        return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+        // return fetch(`https://api.spotify.com/v1/search?type=track&q=${term}`, {
+        //     method: 'GET',
+        //     headers: {Authorization: `bearer ${accessToken}`},
+        // })
+        return fetch(`https://api.spotify.com/v1/search?q=${encodeURIComponent(term)}&type=track`, {
             method: 'GET',
-            headers: {Authorization: `bearer ${accessToken}`},
+            headers: { Authorization: `Bearer ${accessToken}` },
         })
         .then(response => response.json())
+        // .then(jsonResponse => {
+        //     if(!jsonResponse) console.error("Response error.");
+        //     return jsonResponse.tracks.items.map(t => ({
+        //         id: t.id,
+        //         name: t.name,
+        //         arist: t.artists[0].name,
+        //         album: t.album.name,
+        //         uri: t.uri
+        //     }))
+        // })
         .then(jsonResponse => {
-            if(!jsonResponse) console.error("Response error.");
+            if (!jsonResponse || !jsonResponse.tracks || !jsonResponse.tracks.items) {
+                console.error("Response error: No tracks found.");
+                return [];
+            }
+
             return jsonResponse.tracks.items.map(t => ({
                 id: t.id,
                 name: t.name,
-                arist: t.artist[0].name,
+                artist: t.artists[0].name,
                 album: t.album.name,
                 uri: t.uri
-            }))
+            }));
         })
+
     }
 }
 
