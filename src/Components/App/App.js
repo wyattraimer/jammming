@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from "react";
+import React, {useState} from "react";
 import styles from './App.module.css';
 
 import SearchBar from "../SearchBar/SearchBar";
@@ -38,12 +38,12 @@ function App () {
               playlistName={playlistName} 
               playlistTracks={playlistTracks}
               onRemove={removeTrack}
-            >
-            </Playlist>
+              onNameChange={updatePlaylistName}
+            />
           </div>
         </div>
       </div>
-        );
+    );
 }
 
 export default App;
