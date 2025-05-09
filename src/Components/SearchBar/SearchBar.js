@@ -4,9 +4,15 @@ import styles from './SearchBar.module.css';
 function SearchBar (props) {
   const [term, setTerm] = useState('');
 
-  const passTerm = term => {
-    props.onSearch(term);
+  const passTerm = () => {
+    if (term) {
+        console.log("Searching for term:", term);
+        props.onSearch(term);
+    } else {
+        console.warn("Search term is empty!");
+    }
   }
+
 
   const handleTermChange = ({ target }) => {
     setTerm(target.value);

@@ -31,10 +31,12 @@ function App () {
   }
 
   const search = term => {
-    //b/c it's returning a promise
-    Spotify.search(term).then(result => setSearchResults(result));
-    console.log(term);
+    Spotify.search(term).then(result => {
+        console.log("Search Results:", result);
+        setSearchResults(result);
+    });
   }
+
 
     return (
       <div>
