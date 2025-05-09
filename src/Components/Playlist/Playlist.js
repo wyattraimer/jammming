@@ -1,7 +1,7 @@
 import React from "react";
 import styles from './Playlist.module.css';
 
-import Tracklilst from '../Tracklist/Tracklist';
+import Tracklist from '../Tracklist/Tracklist';
 
 function Playlist(props) {
   function handleNameChange({ target }){
@@ -11,7 +11,7 @@ function Playlist(props) {
   return (
     <div className="Playlist">
       <input defaultValue={"New Playlist"} onChange={handleNameChange}/>
-      <Tracklilst 
+      <Tracklist 
         userSearchResults={props.playlistTracks}
         onRemove={props.onRemove}
         isRemoval={true}
